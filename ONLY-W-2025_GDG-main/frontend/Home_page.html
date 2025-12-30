@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBuddy - AI-Powered Data Robustness Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🤖</span>
+                <span>DataBuddy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#cta">Get Started</a></li>
+            </ul>
+            <a href="index.html" class="nav-cta">Try Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Trust Your Data.<br>Instantly.</h1>
+            <p>AI-powered data quality checks in seconds. Catch issues before they cost you.</p>
+            
+                <div class="flowchart-container">
+                    <div class="flowchart-header">
+                        <h3>🔍 DataBuddy Analysis Pipeline</h3>
+                        <p>Watch your data get analyzed in real-time</p>
+                    </div>
+                    
+                    <div class="flowchart" id="flowchart">
+                        <!-- Step 1 -->
+                        <div class="flow-step" data-step="0">
+                            <div class="step-box">
+                                <div class="step-number">1</div>
+                                <div class="step-title">📊 Your Dataset</div>
+                                <div class="step-desc">Upload and prepare your data</div>
+                                <div class="checkmark">✓</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <div class="loading-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flow-step" data-step="1">
+                            <div class="step-box">
+                                <div class="step-number">2</div>
+                                <div class="step-title">🔊 Noise Sensitivity Check</div>
+                                <div class="step-desc">Testing data resilience to noise</div>
+                                <div class="checkmark">✓</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <div class="loading-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="flow-step" data-step="2">
+                            <div class="step-box">
+                                <div class="step-number">3</div>
+                                <div class="step-title">❓ Missing Value Tolerance</div>
+                                <div class="step-desc">Analyzing impact of missing data</div>
+                                <div class="checkmark">✓</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <div class="loading-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="flow-step" data-step="3">
+                            <div class="step-box">
+                                <div class="step-number">4</div>
+                                <div class="step-title">⚖️ Bias & Dependency Detection</div>
+                                <div class="step-desc">Scanning for feature dominance</div>
+                                <div class="checkmark">✓</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <div class="loading-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                        
+                        <!-- Result Box -->
+                        <div class="result-box">
+                            <div class="result-title">
+                                <span>✅</span>
+                                <span>Analysis Complete!</span>
+                            </div>
+                            <ul class="insights-list">
+                                <li class="insight-item">
+                                    <span class="insight-icon">🔊</span>
+                                    <span>How much noise is too much?</span>
+                                </li>
+                                <li class="insight-item">
+                                    <span class="insight-icon">❓</span>
+                                    <span>When do missing values break analysis?</span>
+                                </li>
+                                <li class="insight-item">
+                                    <span class="insight-icon">⚖️</span>
+                                    <span>Is one feature dominating results?</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="restart-button" id="restartBtn">
+                        🔄 Run Analysis Again
+                    </button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <h2 class="features-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-desc">Analyze thousands of rows in milliseconds with our optimized AI engine.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Precision Detection</h3>
+                    <p class="feature-desc">Catch anomalies, outliers, and inconsistencies with 99.8% accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Secure & Private</h3>
+                    <p class="feature-desc">Your data never leaves your environment. Enterprise-grade security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Real-time Insights</h3>
+                    <p class="feature-desc">Get actionable insights instantly with AI-powered recommendations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Automated Workflow</h3>
+                    <p class="feature-desc">Integrate seamlessly into your data pipeline with our API.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Smart Suggestions</h3>
+                    <p class="feature-desc">AI recommends fixes and improvements for detected issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-content">
+            <h2>Ready to Bulletproof Your Data?</h2>
+            <p>Join thousands of data professionals who trust their datasets with confidence</p>
+            <a href="index.html" class="cta-button">Try For Free Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DataBuddy</h3>
+                <p style="color: #94a3b8;">AI-powered data quality checks for everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">GDPR</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DataBuddy. Built with ❤️ for data professionals.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animated Background Grid
+        function createBackgroundGrid() {
+            const bg = document.getElementById('bgAnimation');
+            for (let i = 0; i < 20; i++) {
+                const line = document.createElement('div');
+                line.className = 'grid-line';
+                line.style.width = Math.random() > 0.5 ? '1px' : '100%';
+                line.style.height = Math.random() > 0.5 ? '100%' : '1px';
+                line.style.left = Math.random() * 100 + '%';
+                line.style.top = Math.random() * 100 + '%';
+                line.style.animationDelay = Math.random() * 3 + 's';
+                bg.appendChild(line);
+            }
+        }
+
+        // Flowchart Animation System
+        let currentStep = 0;
+        let animationRunning = false;
+
+        async function runFlowchartAnimation() {
+            if (animationRunning) return;
+            animationRunning = true;
+
+            const steps = document.querySelectorAll('.flow-step');
+            const arrows = document.querySelectorAll('.flow-arrow');
+            const resultBox = document.querySelector('.result-box');
+            const insightItems = document.querySelectorAll('.insight-item');
+
+            // Reset all
+            steps.forEach(step => {
+                step.classList.remove('active');
+                const box = step.querySelector('.step-box');
+                box.classList.remove('processing', 'completed');
+            });
+            arrows.forEach(arrow => arrow.classList.remove('active'));
+            resultBox.classList.remove('active');
+            insightItems.forEach(item => item.classList.remove('show'));
+
+            // Animate each step
+            for (let i = 0; i < steps.length; i++) {
+                const step = steps[i];
+                const stepBox = step.querySelector('.step-box');
+                
+                // Show step
+                step.classList.add('active');
+                stepBox.classList.add('processing');
+                
+                // Wait for processing (2 seconds)
+                await sleep(2000);
+                
+                // Mark as completed
+                stepBox.classList.remove('processing');
+                stepBox.classList.add('completed');
+                
+                // Show arrow and loading
+                if (i < arrows.length) {
+                    arrows[i].classList.add('active');
+                    await sleep(1500);
+                }
+            }
+
+            // Show result box
+            await sleep(500);
+            resultBox.classList.add('active');
+            
+            // Animate insights one by one
+            for (let i = 0; i < insightItems.length; i++) {
+                await sleep(300);
+                insightItems[i].classList.add('show');
+            }
+
+            animationRunning = false;
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Restart Button Handler
+        document.getElementById('restartBtn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+            
+            runFlowchartAnimation();
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            createBackgroundGrid();
+            // Start animation after a brief delay
+            setTimeout(() => {
+                runFlowchartAnimation();
+            }, 500);
+        });
+
+        // Scroll reveal for feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(50px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>

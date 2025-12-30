@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataBuddy - Enterprise Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🤖</span>
+        <span>DataBuddy</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="Home_page.html">Home</a></li>
+        <li><a href="Home_page.html">Features</a></li>
+        <li><a href="Home_page.html">Get Started</a></li>
+      </ul>
+      <a href="Home_page.html" class="nav-cta">Try Now</a>
+    </div>
+  </nav>
+
+  <!-- UPLOAD PAGE -->
+  <section id="upload-section" class="page active">
+    <div class="container">
+      <header class="main-header">
+        <div class="logo-section">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="36" height="36" rx="8" stroke="#d4af37" stroke-width="2" />
+            <path d="M12 20L18 26L28 14" stroke="#d4af37" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <div class="logo-text">
+            <h1>DataBuddy</h1>
+            <p class="tagline">Enterprise Analytics</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-card upload-card">
+        <div class="card-header">
+          <h2>Upload Dataset for Analysis</h2>
+          <p class="subtitle">Advanced AI analysis for quality, bias detection, and anomalies</p>
+        </div>
+
+        <div class="upload-area" id="upload-zone">
+          <svg class="upload-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 20V80M60 20L40 40M60 20L80 40" stroke="#d4af37" stroke-width="3" stroke-linecap="round" />
+            <rect x="30" y="70" width="60" height="30" rx="4" stroke="#d4af37" stroke-width="2" stroke-dasharray="4 4"
+              opacity="0.6" />
+          </svg>
+          <div class="upload-content">
+            <h3 class="upload-title">Drop CSV file here</h3>
+            <p class="upload-text">or click to browse your files</p>
+            <div class="upload-specs">
+              <span class="spec-item">📄 CSV Format</span>
+            </div>
+          </div>
+        </div>
+
+        <input type="file" id="csv-file" accept=".csv">
+
+        <select id="target-select" style="display: none; margin-top: 12px;">
+          <option value="" disabled selected>
+            Select target column
+          </option>
+        </select>
+
+        <button id="run-test-btn" class="btn btn-primary btn-full" style="margin-top: 32px;">
+          Start Analysis
+        </button>
+
+        <div id="upload-status" class="status-message">
+          <span class="status-dot"></span>
+          <span class="status-text">Ready to upload</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOADING OVERLAY -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loading-content">
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
+      <h3 class="loading-title">Analyzing Dataset</h3>
+      <p class="loading-step" id="loader-step">Initializing analysis engine...</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD PAGE -->
+  <section id="dashboard-section" class="page">
+    <div class="container">
+      <header class="main-header">
+        <div class="logo-section">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="36" height="36" rx="8" stroke="#d4af37" stroke-width="2" />
+            <path d="M12 20L18 26L28 14" stroke="#d4af37" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <div class="logo-text">
+            <h1>DataBuddy</h1>
+            <p class="tagline">Enterprise Analytics</p>
+          </div>
+        </div>
+        <button id="back-btn" class="btn btn-secondary">New Analysis</button>
+      </header>
+
+      <div class="dashboard-header">
+        <h2>Analysis Results</h2>
+        <p class="subtitle" id="target-info">Target column detected</p>
+      </div>
+
+      <div id="scores-container" class="metrics-grid"></div>
+
+      <div class="content-card chart-card">
+        <h3>Robustness Stress Testing</h3>
+        <p class="subtitle">3-Curve analysis: Noise, Missing Data, and Bias/Drift</p>
+        <span class="badge">LIVE</span>
+        <div class="chart-content">
+          <img id="robustness-chart" alt="Data Quality Chart">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI ASSISTANT MASCOT -->
+  <div id="ai-assistant" class="assistant hidden">
+    <div class="mascot-container">
+      <img src="assets/mascot.png" alt="AI Mascot" class="mascot-image" />
+    </div>
+
+    <div id="assistant-panel" class="assistant-panel">
+      <div class="panel-header">
+        <div class="assistant-info">
+          <div class="assistant-avatar-small">🤖</div>
+          <div class="assistant-details">
+            <h4>DataBuddy Assistant</h4>
+            <p class="assistant-status">● Online</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div id="message-bubble" class="message-bubble">
+          <span id="bubble-text">Hi! Click me to get insights about your data analysis.</span>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button id="ask-buddy-btn" class="btn btn-primary ask-btn">Get Insights</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
