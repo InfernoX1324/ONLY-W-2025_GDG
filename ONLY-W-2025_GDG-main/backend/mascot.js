@@ -49,6 +49,15 @@ Noise robustness score: ${data.noise_score || 0}%
 Missingness robustness score: ${data.missing_score || 0}%
 Bias / drift robustness score: ${data.bias_score || 0}%
 
+Dominant feature: ${data.dominant_feature?.feature || 'N/A'}
+Feature influence score: ${data.dominant_feature?.influence || 0}
+Feature threshold: ${data.dominant_feature?.threshold || 0}
+
+Safe limits:
+- Max noise percent: ${data.safe_limits?.max_noise_percent ?? 'N/A'}%
+- Max missing percent: ${data.safe_limits?.max_missing_percent ?? 'N/A'}%
+- Max bias factor: ${data.safe_limits?.max_bias_factor ?? 'N/A'}
+
 Explain these results in simple language for a 10th-grade student.
 Be very concise and to the point.
 Use at most 5 short bullet points.
