@@ -289,7 +289,7 @@
                 stepBox.classList.add('processing');
                 
                 // Wait for processing (2 seconds)
-                await sleep(1000);
+                await sleep(1500);
                 
                 // Mark as completed
                 stepBox.classList.remove('processing');
@@ -298,7 +298,7 @@
                 // Show arrow and loading
                 if (i < arrows.length) {
                     arrows[i].classList.add('active');
-                    await sleep(800);
+                    await sleep(1000);
                 }
             }
 
