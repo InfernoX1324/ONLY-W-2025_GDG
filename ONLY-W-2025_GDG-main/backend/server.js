@@ -122,15 +122,5 @@ app.post('/ask-buddy', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('🚀 Server running at http://localhost:3000');
-  console.log('📁 Frontend served from:', path.join(rootDir, 'frontend'));
-  console.log('📊 Output directory:', path.join(__dirname, 'output'));
-  console.log('✅ Available routes:');
-  console.log('   - GET  /              -> Home_page.html');
-  console.log('   - GET  /index.html    -> index.html');
-  console.log('   - GET  /Home_page.html -> Home_page.html');
-  console.log('   - POST /run-test      -> Upload CSV and run analysis');
-  console.log('   - GET  /analysis.json -> Get analysis results');
-  console.log('   - POST /ask-buddy     -> Get AI assistant explanation');
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Server running"));

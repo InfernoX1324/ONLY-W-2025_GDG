@@ -46,7 +46,7 @@ def detect_dominant_feature(correlations):
         }
 
     return None
-#aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 
 def test_linearity(x, y, threshold=0.5):
     x = np.array(x, dtype=float)
